@@ -1,13 +1,14 @@
 {
-  "name": "chelmsford-radio-proxy",
+  "name": "ccr-proxy",
   "version": "1.0.0",
-  "description": "A simple proxy to get current song data from Chelmsford Community Radio",
+  "description": "A proxy to get current song data from Chelmsford Community Radio",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "author": "",
   "license": "MIT",
+  "type":"module",
   "dependencies": {
     "express": "^5.1.0",
     "node-fetch": "^3.3.2"
