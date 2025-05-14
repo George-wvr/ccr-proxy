@@ -1,10 +1,12 @@
 import express from 'express';
-import fetch from 'node-fetch'; // Importing node-fetch for making requests
+import fetch from 'node-fetch';
+import cors from 'cors';
 
 const app = express();
+app.use(cors()); // Allow requests from any origin
 
-// Use the dynamic port from Render, or default to 3000 locally
 const port = process.env.PORT || 3000;
+
 
 app.get("/", (req, res) => {
   res.send("🎧 Proxy server is running!");
