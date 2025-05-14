@@ -4,33 +4,25 @@ import fetch from 'node-fetch';
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("🎧 Proxy server is running!");
-});
-
 app.get("/nowplaying", async (req, res) => {
   try {
-    const url = "https://cast3.asurahosting.com/proxy/chelmsfo/stats?sid=1&mode=json";
+    const url = "https://cast3.asurahosting.com/proxy/chelmsfo/stats?sid=1";
     const response = await fetch(url);
 
+    // Check if the response was successful
     if (!response.ok) {
-      console.error("Upstream fetch failed with status:", response.status);
-      return res.status(500).json({ error: "Upstream server error" });
+      console.error(`Failed to fetch from SHOUTcast: ${response.status} ${response.statusText}`);
+      return res.status(500).json({ error: `Upstream fetch failed: ${response.statusText}` });
     }
 
     const data = await response.json();
-
-    console.log("Raw response from SHOUTcast:", JSON.stringify(data, null, 2));
+    console.log("🪵 Raw SHOUTcast data:", JSON.stringify(data, null, 2));
     
-    // Return the raw JSON data
+    // Return the raw JSON data for debugging
     res.json(data);
 
   } catch (error) {
     console.error("Error in /nowplaying:", error.message);
-    res.status(500).json({ error: "Failed to fetch data" });
+    res.status(500).json({ error: `Failed to fetch data: ${error.message}` });
   }
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
 });
