@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send("This is the proxy server for information about the CCR Stream. Add /nowplaying to the url to access the information.");
+  res.send("🎧 Proxy server is running!");
 });
 
 app.get("/nowplaying", async (req, res) => {
@@ -17,19 +17,18 @@ app.get("/nowplaying", async (req, res) => {
     // Make the request to SHOUTcast API
     const response = await fetch(url);
 
-    // Check if the response was successful
     if (!response.ok) {
       console.error(`❌ Failed to fetch from SHOUTcast: ${response.status} ${response.statusText}`);
       return res.status(500).json({ error: `Upstream fetch failed: ${response.statusText}` });
     }
 
-    const data = await response.json();
-
-    // Log the raw data from SHOUTcast for debugging
-    console.log("🪵 Raw SHOUTcast data:", JSON.stringify(data, null, 2));
+    // Get raw XML data
+    const rawData = await response.text();
+    console.log("🪵 Raw SHOUTcast XML:", rawData);  // Log the raw XML to the console
     
-    // Return the raw JSON data (for debugging purposes)
-    res.json(data);
+    // Return the raw XML as the response (just for debugging)
+    res.type('text/xml');  // Set the response type to XML
+    res.send(rawData);  // Send the raw XML data back as response
 
   } catch (error) {
     console.error("❌ Error in /nowplaying:", error.message);
