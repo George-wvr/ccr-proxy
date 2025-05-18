@@ -3,13 +3,13 @@ import fetch from 'node-fetch';
 import cors from 'cors';
 
 const app = express();
-app.use(cors()); // Allow requests from any origin
+app.use(cors());
 
 const port = process.env.PORT || 3000;
 
 //Main landing page information
 app.get("/", (req, res) => {
-  res.send("<h1>Chelmsford Community Radio Proxy Server (ccr-proxy)</h1><br><p>Welcome to the CCR proxy server. This server provides information about Chelmsford Community Radio</p><p>Add /nowplaying to the URL to access information about the stream");
+  res.send("<h1>Chelmsford Community Radio Proxy Server (ccr-proxy)</h1><br><p>Welcome to the CCR proxy server. This server provides information about Chelmsford Community Radio</p><p>Add <a href='https://ccr-proxy.onrender.com/nowplaying'>/nowplaying</a> to the URL to access information about the stream");
 });
 
 // the /nowplaying page (SHOUTcast request)
