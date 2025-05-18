@@ -1,11 +1,19 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import cors from 'cors';
+import { schedule } from './schedule.js';
+import { DateTime } from 'luxon';
+
 
 const app = express();
 app.use(cors());
 
 const port = process.env.PORT || 3000;
+
+// Start the server and listen on the provided port
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 //Main landing page information
 app.get("/", (req, res) => {
@@ -40,7 +48,25 @@ app.get("/nowplaying", async (req, res) => {
   }
 });
 
-// Start the server and listen on the provided port
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.get('/currentshow', (req, res) => {
+  // Get current time in Europe/London
+  const now = DateTime.now().setZone('Europe/London');
+  const currentDay = now.toFormat('EEEE');     // e.g. "Monday"
+  const currentTime = now.toFormat('HH:mm');   // e.g. "14:30"
+
+  const currentShow = schedule.find(show =>
+    show.day === currentDay &&
+    show.start <= currentTime &&
+    show.end > currentTime
+  );
+
+  if (currentShow) {
+    res.json({
+      title: currentShow.title,
+      presenters: currentShow.presenters
+    });
+  } else {
+    res.json({ title: "No scheduled show", presenters: [] });
+  }
 });
+
