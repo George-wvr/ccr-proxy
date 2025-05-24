@@ -73,5 +73,9 @@ Built to learn Express and backend APIs while contributing to CCR’s digital pr
 Chelmsford Community Radio
 SHOUTcast streaming API
 
+## 🔮 Future Development
+- 📄 Changing the format of /nowplaying from XML to JSON for easier handling.
+- 📻 Completing the weekly schedule
+
 ## 📬 Contact
 Questions or contributions? Open an issue or get in touch!
