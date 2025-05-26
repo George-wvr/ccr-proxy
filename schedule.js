@@ -81,6 +81,24 @@ export const schedule = [
     presenters: ['Luke Woolley','Tobias']
   },
   
+  //Tuesday
+
+  //Wednesday
+
+  //Thursday
+
+  //Friday
+  
+  //Saturday
+
+  {
+    day: 'Saturday',
+    start: '10:00',
+    end: '11:00',
+    title: 'The Brunch Hour',
+    presenters: ['George Weaver']
+  },
+
   //Sunday
   {
     day: 'Sunday',
