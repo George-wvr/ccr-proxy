@@ -521,6 +521,54 @@ export const schedule = [
   //Sunday
   {
     day: 'Sunday',
+    start: '00:00',
+    end: '06:00',
+    title: 'Nightime',
+    presenters: ['Amber']
+  },
+
+  {
+    day: 'Sunday',
+    start: '06:00',
+    end: '08:00',
+    title: 'Tea and Toast',
+    presenters: ['Stuart Torn']
+  },
+
+  {
+    day: 'Sunday',
+    start: '08:00',
+    end: '10:00',
+    title: 'Sunday Breakfast',
+    presenters: ['Dave Daniels']
+  },
+
+  {
+    day: 'Sunday',
+    start: '10:00',
+    end: '12:00',
+    title: 'Sunday Special',
+    presenters: ['The Chelmsford Community']
+  },
+
+  {
+    day:'Sunday',
+    start:'12:00',
+    end:'17:00',
+    title:'Ambers Daytime',
+    presenters:['Amber']
+  },
+
+  {
+    day:'Sunday',
+    start:'17:00',
+    end:'18:00',
+    title:'Back to Backnang',
+    presenters:['Backnang Young Reporters']
+  },
+
+  {
+    day: 'Sunday',
     start: '18:00',
     end: '20:00',
     title: 'Sunday Selection',
