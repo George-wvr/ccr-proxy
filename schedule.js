@@ -349,6 +349,101 @@ export const schedule = [
   },
 
   //Friday
+  {
+    day: 'Friday',
+    start: '00:00',
+    end: '06:00',
+    title: 'Nightime',
+    presenters: ['Amber']
+  },
+  
+  {
+    day: 'Friday',
+    start: '06:00',
+    end: '07:30',
+    title: 'Early Breakfast',
+    presenters: ['Dave Daniels']
+  },
+
+  {
+    day: 'Friday',
+    start: '07:30',
+    end: '10:00',
+    title: 'Good Morning Chelmsford',
+    presenters: ['Michelle Durrant']
+  },
+
+  {
+    day: 'Friday',
+    start: '10:00',
+    end: '12:00',
+    title: 'Fresh Friday',
+    presenters: ['James Green']
+  },
+
+  {
+    day: 'Friday',
+    start: '12:00',
+    end: '14:00',
+    title: 'Lunchtime with Andrew Alton Reid',
+    presenters: ['Andrew Alton Reid']
+  },
+
+  {
+    day: 'Friday',
+    start: '14:00',
+    end: '15:00',
+    title: "Tens at 2",
+    presenters: ['Daria Ion']
+  },
+
+  {
+    day: 'Friday',
+    start: '15:00',
+    end: '17:00',
+    title: 'Ignition',
+    presenters: ['Ben Kerns']
+  },
+
+  {
+    day:'Friday',
+    start:'17:00',
+    end:'19:00',
+    title:'Drive at Five',
+    presenters:['Daisy Barker', 'Daria Ion']
+  },
+
+  {
+    day:'Friday',
+    start:'19:00',
+    end:'21:00',
+    title:'#FeelGoodFriday',
+    presenters:['Rich Lyman']
+  },
+
+  {
+    day:'Friday',
+    start:'21:00',
+    end:'22:00',
+    title:'234! The Punk Rock Show',
+    presenters:['Richie Viral']
+  },
+
+  {
+    day:'Friday',
+    start:'22:00',
+    end:'23:00',
+    title:'Almost Saturday Night',
+    presenters:['Miriam', 'Cabin Boy']
+  },
+
+  {
+    day:'Friday',
+    start:'23:00',
+    end:'00:00',
+    title:'Amber in the Evening',
+    presenters:['Amber']
+  },
 
   //Saturday
 
