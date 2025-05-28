@@ -446,6 +446,29 @@ export const schedule = [
   },
 
   //Saturday
+  {
+    day: 'Saturday',
+    start: '00:00',
+    end: '06:00',
+    title: 'Nightime',
+    presenters: ['Amber']
+  },
+
+  {
+    day: 'Saturday',
+    start: '06:00',
+    end: '08:00',
+    title: 'Tea and Toast',
+    presenters: ['Stuart Torn']
+  },
+
+  {
+    day: 'Saturday',
+    start: '08:00',
+    end: '10:00',
+    title: 'Saturday Breakfast',
+    presenters: ['James Green']
+  },
 
   {
     day: 'Saturday',
@@ -454,6 +477,46 @@ export const schedule = [
     title: 'The Brunch Hour',
     presenters: ['George Weaver']
   },
+
+  {
+    day: 'Saturday',
+    start: '11:00',
+    end: '13:00',
+    title: 'On the move',
+    presenters: ['Dave Daniels']
+  },
+
+  {
+    day:'Saturday',
+    start:'13:00',
+    end:'15:00',
+    title:'Saturday Soul Show',
+    presenters:['Kevin Lodge']
+  },
+
+  {
+    day:'Saturday',
+    start:'15:00',
+    end:'19:00',
+    title:'Ambers Daytime',
+    presenters:['Amber']
+  },
+
+  {
+    day:'Saturday',
+    start:'19:00',
+    end:'21:00',
+    title:'Ignition with Ben Kerns and Finley Hall',
+    presenters:['Ben Kerns', 'Finley Hall']
+  },
+
+  {
+    day:'Saturday',
+    start:'21:00',
+    end:'00:00',
+    title:'In the Mix',
+    presenters:['Amber']
+  },  
 
   //Sunday
   {
