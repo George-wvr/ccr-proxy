@@ -233,7 +233,7 @@ export const schedule = [
     start: '17:00',
     end: '19:00',
     title: 'Drive at Five',
-    presenters: ['Richard Taylor']
+    presenters: ['Izzy Abbot', 'Erin Abbot']
   },
 
   {
