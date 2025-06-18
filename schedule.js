@@ -506,8 +506,8 @@ export const schedule = [
     day:'Saturday',
     start:'19:00',
     end:'21:00',
-    title:'Ignition with Ben Kerns and Finley Hall',
-    presenters:['Ben Kerns', 'Finley Hall']
+    title:'The CCR Dance Party',
+    presenters:['George Weaver']
   },
 
   {
