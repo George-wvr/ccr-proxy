@@ -233,7 +233,7 @@ export const schedule = [
     start: '17:00',
     end: '19:00',
     title: 'Drive at Five',
-    presenters: ['Richard Taylor']
+    presenters: ['Izzy Abbot', 'Erin Abbot']
   },
 
   {
@@ -522,8 +522,8 @@ export const schedule = [
     day:'Saturday',
     start:'19:00',
     end:'21:00',
-    title:'Ignition with Ben Kerns and Finley Hall',
-    presenters:['Ben Kerns', 'Finley Hall']
+    title:'The CCR Dance Party',
+    presenters:['George Weaver']
   },
 
   {
