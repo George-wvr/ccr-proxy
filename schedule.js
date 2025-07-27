@@ -465,17 +465,9 @@ export const schedule = [
   {
     day: 'Saturday',
     start: '00:00',
-    end: '06:00',
+    end: '08:00',
     title: 'Nightime',
     presenters: ['Amber']
-  },
-
-  {
-    day: 'Saturday',
-    start: '06:00',
-    end: '08:00',
-    title: 'Tea and Toast',
-    presenters: ['Stuart Torn']
   },
 
   {
@@ -538,17 +530,9 @@ export const schedule = [
   {
     day: 'Sunday',
     start: '00:00',
-    end: '06:00',
+    end: '08:00',
     title: 'Nightime',
     presenters: ['Amber']
-  },
-
-  {
-    day: 'Sunday',
-    start: '06:00',
-    end: '08:00',
-    title: 'Tea and Toast',
-    presenters: ['Stuart Torn']
   },
 
   {
