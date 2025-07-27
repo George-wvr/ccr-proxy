@@ -335,6 +335,14 @@ export const schedule = [
   {
     day:'Thursday',
     start:'19:00',
+    end:'20:00',
+    title:'Chelmsford Reports',
+    presenters:['The Report Team']
+  },
+
+  {
+    day:'Thursday',
+    start:'20:00',
     end:'22:00',
     title:'Amber in the evening',
     presenters:['Amber']
@@ -352,6 +360,14 @@ export const schedule = [
   {
     day: 'Friday',
     start: '00:00',
+    end: '01:00',
+    title: 'Latin Starship',
+    presenters: ['Juan Braschi']
+  },
+
+  {
+    day: 'Friday',
+    start: '01:00',
     end: '06:00',
     title: 'Nightime',
     presenters: ['Amber']
@@ -378,7 +394,7 @@ export const schedule = [
     start: '10:00',
     end: '12:00',
     title: 'Fresh Friday',
-    presenters: ['James Green']
+    presenters: ['Alex Trim']
   },
 
   {
@@ -394,7 +410,7 @@ export const schedule = [
     start: '14:00',
     end: '15:00',
     title: "Tens at 2",
-    presenters: ['Daria Ion']
+    presenters: ['Tommy', 'Georgia']
   },
 
   {
