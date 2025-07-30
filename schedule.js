@@ -257,7 +257,7 @@ export const schedule = [
     start: '22:00',
     end: '23:00',
     title: 'Underground Sounds',
-    presenters: ['Phil Wharam', 'Test Presenter']
+    presenters: ['Phil Wharam']
   },
 
   {
