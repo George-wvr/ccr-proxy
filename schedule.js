@@ -263,7 +263,7 @@ export const schedule = [
   {
     day: 'Wednesday',
     start: '23:00',
-    end: '00:00',
+    end: '23:59',
     title: 'The Mop Tops and the Kings',
     presenters: ['Steve Chelmsford']
   },
