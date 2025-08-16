@@ -85,7 +85,7 @@ export const schedule = [
   {
     day: 'Monday',
     start: '23:00',
-    end: '00:00',
+    end: '23:59',
     title: 'Monday Night Mayhem',
     presenters: ['Luke Woolley', 'Tobias']
   },
@@ -167,7 +167,7 @@ export const schedule = [
   {
     day: 'Tuesday',
     start: '22:00',
-    end: '00:00',
+    end: '23:59',
     title: 'Nighttime',
     presenters: ['Amber']
   },
@@ -351,7 +351,7 @@ export const schedule = [
   {
     day:'Thursday',
     start:'22:00',
-    end:'00:00',
+    end:'23:59',
     title:'After Hours',
     presenters:['Ben Kerns']
   },
@@ -456,7 +456,7 @@ export const schedule = [
   {
     day:'Friday',
     start:'23:00',
-    end:'00:00',
+    end:'23:59',
     title:'Amber in the Evening',
     presenters:['Amber']
   },
@@ -521,7 +521,7 @@ export const schedule = [
   {
     day:'Saturday',
     start:'21:00',
-    end:'00:00',
+    end:'23:59',
     title:'In the Mix',
     presenters:['Amber']
   },  
@@ -594,7 +594,7 @@ export const schedule = [
   {
     day:'Sunday',
     start: '22:40',
-    end: '00:00',
+    end: '23:59',
     title: 'Amber in the Evening',
     presenters: ['Amber']
   },
