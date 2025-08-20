@@ -255,22 +255,23 @@ export const schedule = [
   {
     day: 'Wednesday',
     start: '22:00',
-    end: '23:00',
+    end: '23:59',
     title: 'Underground Sounds',
     presenters: ['Phil Wharam']
   },
 
-  {
-    day: 'Wednesday',
-    start: '23:00',
-    end: '23:59',
+  //Thursday
+    {
+    day: 'Thursday',
+    start: '00:00',
+    end: '01:00',
     title: 'The Mop Tops and the Kings',
     presenters: ['Steve Chelmsford']
   },
-  //Thursday
+
   {
     day: 'Thursday',
-    start: '00:00',
+    start: '01:00',
     end: '06:00',
     title: 'Nightime',
     presenters: ['Amber']
