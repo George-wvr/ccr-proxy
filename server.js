@@ -5,24 +5,24 @@ import { schedule } from './schedule.js';
 import { DateTime } from 'luxon';
 import fs from 'fs';
 import bodyParser from 'body-parser';
-import { parseStringPromise } from 'xml2js';
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 // Allow XML POSTs
-app.use(bodyParser.text({ type: 'application/xml' }));
+app.use(bodyParser.text({ type: 'application/json' }));
+app.use('/api/nowplaying', express.text({ type: '*/*' }));
 
 const port = process.env.PORT || 3000;
 const DATA_FILE = 'nowplaying.json';
 
-// --- Load any saved track data on startup ---
+//Load the last known now playing from file if it exists
 let nowPlaying = {};
 if (fs.existsSync(DATA_FILE)) {
   try {
     const saved = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
     nowPlaying = saved;
-    console.log('Loaded saved nowPlaying:', nowPlaying);
   } catch (err) {
     console.error('Error reading saved data:', err);
   }
@@ -45,7 +45,6 @@ app.get("/nowplaying", async (req, res) => {
     }
 
     const rawData = await response.text();
-    console.log("Raw SHOUTcast XML for Chelmsford Community Radio:", rawData);
 
     res.type('text/xml');
     res.send(rawData);
@@ -81,39 +80,40 @@ app.get('/currentshow', (req, res) => {
 // POST endpoint for playout system to push now playing info in XML
 app.post('/api/nowplaying', async (req, res) => {
   try {
-    const xml = req.body;
-    const result = await parseStringPromise(xml);
+    let data;
+    try {
+      data = JSON.parse(req.body); // attempt to parse the text as JSON
+    } catch {
+      return res.status(400).json({ error: "Body was not valid JSON" });
+    }
 
-    // Extract relevant fields
-    const artist = result?.track?.artist?.[0] || "";
-    const title = result?.track?.title?.[0] || "";
-    const show = result?.track?.show?.[0] || "";
+    if (!data.title || !data.artist) {
+      return res.status(400).json({ error: "Missing artist or title in data" });
+    }
 
     // Update nowPlaying object
     const updated = {
-      previous: nowPlaying.current || null,
+      previous: nowPlaying?.current || null,
       current: {
-        artist,
-        title,
-        show,
+        artist: data.artist,
+        title: data.title,
         timestamp: new Date().toISOString()
       }
     };
 
     nowPlaying = updated;
 
-    // Save to file
+    // Save to file 
     fs.writeFileSync(DATA_FILE, JSON.stringify(nowPlaying, null, 2));
-    console.log("Now playing updated:", nowPlaying);
 
-    res.status(200).send("OK");
-    
-    //error handling
+    res.json({ success: true, nowPlaying });
+
   } catch (err) {
-    console.error("Error parsing XML:", err);
-    res.status(400).send("Bad XML");
+    console.error("Error handling /api/nowplaying:", err);
+    res.status(500).json({ error: "Server error" });
   }
 });
+
 
 // GET endpoint to retrieve now playing info in JSON
 app.get('/api/nowplaying', (req, res) => {
