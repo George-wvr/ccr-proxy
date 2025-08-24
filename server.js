@@ -82,7 +82,7 @@ app.post('/api/nowplaying', async (req, res) => {
   try {
     let data;
     try {
-      data = JSON.parse(req.body); // attempt to parse the text as JSON
+      data = req.body; // attempt to parse the text as JSON
     } catch {
       if (typeof data == "string"){
         return res.status(400).json({ error: "Body was a string"});
