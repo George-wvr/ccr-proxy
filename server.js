@@ -82,34 +82,26 @@ app.post('/api/nowplaying', async (req, res) => {
   try {
     let data;
     console.log("Request Received");
-    console.log("Headers:", req.headers);
     console.log("Body: ", req.body);
-    res.json({
-      receivedTyoe: typeof req.body,
-      contentType: req.headers['Content Type'],
-      body: req.body
-    })
-    
-    try {
-      data = req.body; // attempt to parse the text as JSON
-    } catch {
-      if (typeof data == "json"){
-        return res.status(400).json({ error: "Body was a string"});
-      }else{
-      return res.status(400).json({ error: "Body was not valid JSON"});
-      }
-    }
 
-    if (!data.title || !data.artist) {
-      return res.status(400).json({ error: "Missing artist or title in data" });
+    data = req.body;
+
+    if (!data.artists || !data.artist1 || !data.artist2 || !data.artist3 || !data.title || !data.type || !data.typeNo || !data.date) {
+      return res.status(400).json({ error: "Required fields missing from data" });
     }
 
     // Update nowPlaying object
     const updated = {
       previous: nowPlaying?.current || null,
       current: {
-        artist: data.artist,
+        artists: data.artists,
+        artist1: data.artist1,
+        artist2: data.artist2,
+        artist3: data.artist3,
         title: data.title,
+        type: data.type,
+        typeNo: data.typeNo,
+        dateChanged: data.date,
         timestamp: new Date().toISOString()
       }
     };
