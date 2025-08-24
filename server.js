@@ -86,10 +86,6 @@ app.post('/api/nowplaying', async (req, res) => {
 
     data = req.body;
 
-    if (!data.artists || !data.artist1 || !data.artist2 || !data.artist3 || !data.title || !data.type || !data.typeNo || !data.date) {
-      return res.status(400).json({ error: "Required fields missing from data" });
-    }
-
     // Update nowPlaying object
     const updated = {
       previous: nowPlaying?.current || null,
