@@ -84,7 +84,11 @@ app.post('/api/nowplaying', async (req, res) => {
     try {
       data = JSON.parse(req.body); // attempt to parse the text as JSON
     } catch {
-      return res.status(400).json({ error: "Body was not valid JSON" });
+      if (typeof data == "string"){
+        return res.status(400).json({ error: "Body was a string"});
+      }else{
+      return res.status(400).json({ error: "Body was not valid JSON"});
+      }
     }
 
     if (!data.title || !data.artist) {
