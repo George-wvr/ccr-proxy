@@ -97,7 +97,6 @@ app.post('/api/nowplaying', async (req, res) => {
         title: data.title,
         type: data.type,
         typeNo: data.typeNo,
-        dateChanged: data.date,
         timestamp: new Date().toISOString()
       }
     };
