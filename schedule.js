@@ -39,7 +39,7 @@ export const schedule = [
     start: '12:00',
     end: '14:00',
     title: 'Lunchtime',
-    presenters: ['Amy Boyd']
+    presenters: ['Ruth Cooper-Dixon', 'Finley Hall']
   },
 
   {
