@@ -233,7 +233,7 @@ export const schedule = [
     start: '17:00',
     end: '19:00',
     title: 'Drive at Five',
-    presenters: ['Izzy Abbot', 'Erin Abbot']
+    presenters: ['Maxine Trick Jones']
   },
 
   {
@@ -531,8 +531,24 @@ export const schedule = [
   {
     day: 'Sunday',
     start: '00:00',
-    end: '08:00',
+    end: '06:00',
     title: 'Nightime',
+    presenters: ['Amber']
+  },
+
+  {
+    day: 'Sunday',
+    start: '06:00',
+    end: '07:00',
+    title: 'Alex Ossai',
+    presenters: ['Alex Ossai']
+  },
+
+  {
+    day: 'Sunday',
+    start: '07:00',
+    end: '08:00',
+    title: 'Ambers Daytime',
     presenters: ['Amber']
   },
 
