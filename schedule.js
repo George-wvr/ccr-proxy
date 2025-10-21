@@ -113,7 +113,7 @@ export const schedule = [
     start: '07:30',
     end: '10:00',
     title: 'Good Morning Chelmsford',
-    presenters: ['Michelle Durrant']
+    presenters: ['Danielle Grainger']
   },
 
   {
